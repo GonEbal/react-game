@@ -1,8 +1,8 @@
-export const RECEIVE_TWEETS = 'RECEIVE_TWEETS'
+export const RECEIVE_QUESTIONS = 'RECEIVE_QUESTIONS'
 
-export function receiveTweets (tweets) {
+export function receiveQuestions (questions) {
 	return {
-		type: RECEIVE_TWEETS,
-		tweets
+		type: RECEIVE_QUESTIONS,
+		questions
 	}
 }
