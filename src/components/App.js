@@ -2,14 +2,20 @@ import React, { Component, Fragment } from 'react'
 import { BrowserRouter as Router, Route } from 'react-router-dom'
 import { connect } from 'react-redux'
 import LoadingBar from 'react-redux-loading'
+import { handleInitialData } from '../actions/shared'
 
 
-function App() {
-  return (
-    <div>
-      Hi
-    </div>
-  )
+class App extends Component {
+    componentDidMount() {
+        this.props.dispatch(handleInitialData())
+    }
+    render() {
+        return (
+            <div>
+        Hi
+      </div>
+        )
+    }
 }
 
-export default App
+export default connect()(App)
