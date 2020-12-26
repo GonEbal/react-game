@@ -19,8 +19,11 @@ class App extends Component {
 					<div className="container">
 						{this.props.loading === true 
 							? null 
-							: <div className='Navbar'>
-								<Route path='/' exact component={Nav} />
+							: <div>
+								<div className='Navbar'>
+									<Nav />
+								</div>
+								<Route path='/' exact component={Dashboard} />
 							</div>}
 					</div>
 				</Fragment>
