@@ -1,9 +1,11 @@
+import '../App.css'
 import React, { Component, Fragment } from "react"
 import { BrowserRouter as Router, Route } from "react-router-dom"
 import { connect } from "react-redux"
 import LoadingBar from "react-redux-loading"
 import { handleInitialData } from "../actions/shared"
 import Dashboard from './Dashboard'
+import Nav from './Nav'
 
 class App extends Component {
 	componentDidMount() {
@@ -17,8 +19,8 @@ class App extends Component {
 					<div className="container">
 						{this.props.loading === true 
 							? null 
-							: <div>
-								<Route path='/' exact component={Dashboard} />
+							: <div className='Navbar'>
+								<Route path='/' exact component={Nav} />
 							</div>}
 					</div>
 				</Fragment>
