@@ -1,13 +1,23 @@
 import React, { Component } from 'react';
+import { connect } from 'react-redux'
 
 class Question extends Component {
 	render() {
 		return (
 			<div>
 				{this.props.id}
+				{this.props.authedUser}
 			</div>
 		);
 	}
 }
 
-export default Question
+function mapStateToProps ({authedUser, users}) {
+
+  return {
+  	authedUser,
+  	users
+  }
+}
+
+export default connect(mapStateToProps)(Question)

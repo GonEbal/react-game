@@ -6,20 +6,21 @@ class Dashboard extends Component {
   unanswered = () => {
     const container = document.getElementById("container_list")
     container.classList.add("right-panel-active")
-  };
+  }
   answered = () => {
     const container = document.getElementById("container_list")
     container.classList.remove("right-panel-active")
   }
-
   render() {
+    console.log(this.props.questionIds)
+    console.log(this.props.answered_q)
     return (
       <div className="container_body">
         <div className="container_list" id="container_list">
           <div className="form-container_list unanswered-container_list questions_list">
             <h1>Unanswered</h1>
             <ul className="dashboard-list">
-              {this.props.questionIds.map((id) => (
+              {this.props.unanswered_q.map((id) => (
                 <li key={id} className="question">
                   <Question id={id} />
                 </li>
@@ -29,7 +30,7 @@ class Dashboard extends Component {
           <div className="form-container_list answered-container_list questions_list">
             <h1>Answered</h1>
             <ul className="dashboard-list">
-              {this.props.questionIds.map((id) => (
+              {this.props.answered_q.map((id) => (
                 <li key={id} className="question">
                   <Question id={id} />
                 </li>
@@ -60,11 +61,21 @@ class Dashboard extends Component {
   }
 }
 
-function mapStateToProps({ questions }) {
+function mapStateToProps({ questions, authedUser, users }) {
+  const answered_questions = Object.values(questions).filter(
+    valueName => (valueName.optionOne.votes).includes(authedUser) 
+    || (valueName.optionTwo.votes).includes(authedUser))
+
+  const unanswered_questions = Object.values(questions).filter(
+    valueName => (!(valueName.optionOne.votes).includes(authedUser)) 
+    && (!(valueName.optionTwo.votes).includes(authedUser)))
   return {
-    questionIds: Object.keys(questions).sort(
-      (a, b) => questions[b].timestamp - questions[a].timestamp
+    unanswered_q: Object.values(unanswered_questions).map(
+    item => item.id
     ),
+    answered_q: Object.values(answered_questions).map(
+    item => item.id
+    )
   }
 }
 
