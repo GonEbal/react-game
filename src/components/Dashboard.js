@@ -8,12 +8,16 @@ class Dashboard extends Component {
   }
 
   unanswered = () => {
-    const container = document.getElementById("container_list")
-    container.classList.add("right-panel-active")
+    const box2 = document.getElementById("box2")
+    const box1 = document.getElementById("box1")
+    box1.classList.remove("shadow")
+    box2.classList.add("shadow")
   }
   answered = () => {
-    const container = document.getElementById("container_list")
-    container.classList.remove("right-panel-active")
+    const box1 = document.getElementById("box1")
+    const box2 = document.getElementById("box2")
+    box1.classList.add("shadow")
+    box2.classList.remove("shadow")
   }
 
   change = () => {
@@ -23,25 +27,41 @@ class Dashboard extends Component {
   render() {
     return (
       <div className="container_body">
-      <button
-      onClick={this.change}
-      >
-        Change
-      </button>
-        <div className='check' style={{display: this.state.show_answered ? 'block' : 'none' }}>
-          {this.props.answered_q.map((id) => (
-            <li key={id} className="question">
-              <Question id={id} />
-            </li>
-          ))}
+        <div className='button_container'>
+          <div
+            id='box1' 
+            className='box shadow'
+            onClick={this.answered}
+            >
+            Answered Questions
+          </div>
+          <div 
+            id='box2'
+            className='box'
+            onClick={this.unanswered}
+            >
+            Unanswered Questions
+          </div>
         </div>
-         <div style={{display: !this.state.show_answered ? 'block' : 'none' }}>
-          {this.props.unanswered_q.map((id) => (
-            <li key={id} className="question">
-              <Question id={id} />
-            </li>
-          ))}
-        </div>
+        <button
+        onClick={this.change}
+        >
+          Change
+        </button>
+          <div className='check' style={{display: this.state.show_answered ? 'block' : 'none' }}>
+            {this.props.answered_q.map((id) => (
+              <li key={id} className="question">
+                <Question id={id} />
+              </li>
+            ))}
+          </div>
+           <div style={{display: !this.state.show_answered ? 'block' : 'none' }}>
+            {this.props.unanswered_q.map((id) => (
+              <li key={id} className="question">
+                <Question id={id} />
+              </li>
+            ))}
+          </div>
       </div>
     )
   }
