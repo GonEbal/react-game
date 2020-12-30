@@ -3,19 +3,24 @@ import { connect } from "react-redux";
 
 class Question extends Component {
 	render() {
-		const { avatarURL, name, id } = this.props.user;
-		const { optionOne, optionTwo } = this.props.question
+		const { avatarURL, name } = this.props.user;
+		const { answer } = this.props
 		return (
 			<Fragment>
-				<img
-					src={avatarURL}
-					alt={`Avatar of ${name}`}
-					className="avatar"
-				/>
-				<div className="tweet-info">
-					<div>
-						<span>{name}</span>
-						<p>{optionOne.text}</p>
+				<div className='user_asks'>
+					<span>{name} asks:</span>
+				</div>
+				<div className='question-inner'>
+					<img
+						src={avatarURL}
+						alt={`Avatar of ${name}`}
+						className="avatar"
+					/>
+					<div className="question-info">
+						<div>
+							<span>Would you rather</span>
+							<p>...{answer}...</p>
+						</div>
 					</div>
 				</div>
 			</Fragment>
@@ -26,9 +31,13 @@ class Question extends Component {
 function mapStateToProps({ questions, users }, { id }) {
 	const question = questions[id];
 	const user = users[question.author];
+	const answer = user.answers[id]
 	return {
 		question: question,
 		user: user,
+		answer: answer
+	      ? question[answer].text
+	      : question['optionOne'].text
 	};
 }
 
