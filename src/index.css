@@ -156,8 +156,8 @@ li {
 }
   
 .avatar {
-  height: 50px;
-  width: 50px;
+  height: 100px;
+  width: 100px;
   border-radius: 25px;
   margin: 10px;
 }
@@ -185,6 +185,12 @@ li {
   margin: 10px 0;
 }
 
-/* Question List */
-
-
+.view_poll_btn {
+  background-color:transparent;
+  border-radius: 5px;
+  border:2px solid #3EBD8A;
+  cursor:pointer;
+  color:#3EBD8A;
+  font-size:17px;
+  padding: 4px 80px;
+}

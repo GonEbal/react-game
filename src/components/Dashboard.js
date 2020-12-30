@@ -12,18 +12,22 @@ class Dashboard extends Component {
     const box1 = document.getElementById("box1")
     box1.classList.remove("shadow")
     box2.classList.add("shadow")
-    this.change()
+    const action = { show_answered: false }
+    this.change(action)
   }
   answered = () => {
     const box1 = document.getElementById("box1")
     const box2 = document.getElementById("box2")
     box1.classList.add("shadow")
     box2.classList.remove("shadow")
-    this.change()
+    const action = { show_answered: true }
+    this.change(action)
   }
 
-  change = () => {
-    this.setState({ show_answered: !this.state.show_answered })
+  change = (action) => {
+    if (this.state.show_answered !== action.show_answered) {
+      this.setState({ show_answered: !this.state.show_answered })
+    }
   }
 
   render() {
@@ -37,9 +41,7 @@ class Dashboard extends Component {
             Unanswered Questions
           </div>
         </div>
-        <div
-          style={{ display: this.state.show_answered ? "block" : "none" }}
-        >
+        <div style={{ display: this.state.show_answered ? "block" : "none" }}>
           {this.props.answered_q.map((id) => (
             <li key={id} className="question">
               <Question id={id} />
