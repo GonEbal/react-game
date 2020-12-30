@@ -34,12 +34,12 @@ class Dashboard extends Component {
     return (
       <div className="container_body">
         <div className="button_container">
-          <div id="box1" className="box shadow" onClick={this.answered}>
+          <button id="box1" className="box shadow" onClick={this.answered}>
             Answered Questions
-          </div>
-          <div id="box2" className="box" onClick={this.unanswered}>
+          </button>
+          <button id="box2" className="box" onClick={this.unanswered}>
             Unanswered Questions
-          </div>
+          </button>
         </div>
         <div style={{ display: this.state.show_answered ? "block" : "none" }}>
           {this.props.answered_q.map((id) => (
