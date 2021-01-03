@@ -183,14 +183,7 @@ li {
   font-weight: bold;
   margin-right: 5px;
 }
-.question-info > div > span:nth-child(2) {
-  color: #969696;
-  font-size: 16px;
-}
-.question-info > div > div {
-  color: #969696;
-  font-size: 15px;
-}
+
 .question-info > div > p {
   font-size: 18px;
   margin: 10px 0;
@@ -204,4 +197,24 @@ li {
   color:#3EBD8A;
   font-size:17px;
   padding: 4px 80px;
+}
+
+/* QuestionPage Component */
+
+form input {
+  margin: 7px;
+}
+
+form button {
+  display: flex;
+}
+
+.submit_poll_btn {
+  margin: 7px;
+  background: #3EBD8A;
+  border-radius: 5px;
+  cursor:pointer;
+  color: white;
+  font-size:17px;
+  padding: 5px 85px;
 }
