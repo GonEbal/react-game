@@ -167,9 +167,9 @@ li {
 }
   
 .avatar {
-  height: 100px;
-  width: 100px;
-  border-radius: 25px;
+  height: 120px;
+  width: 120px;
+  border-radius: 50%;
   margin: 10px;
 }
 
