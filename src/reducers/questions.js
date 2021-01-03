@@ -8,13 +8,18 @@ export default function questions(state = {}, action) {
                 ...action.questions
             }
         case ADD_QUESTION_ANSWER:
+        	
         	const { answer } = action
-        	console.log(answer)
+        	console.log(state[action.qid][answer])
         	return {
         		...state,
                 [action.qid]: {
-                    ...state[action.qid],
-                    optionOne: state[action.qid].optionOne.votes.concat([action.authedUser])
+                	...state[action.qid],
+                	[action.answer]: {
+                		...state[action.qid][answer],
+                		votes: state[action.qid][answer].votes.concat([action.authedUser])
+                	}
+                    //optionOne: state[action.qid].optionOne.votes.concat([action.authedUser])
                 }
         	}
         default:

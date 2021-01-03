@@ -45,7 +45,7 @@ function questionAswer ({ authedUser, qid, answer }) {
 
 export function handleAddQuestionAswer (info) {
   return (dispatch) => {
-    dispatch(handleAddQuestionAswer(info))
+    dispatch(questionAswer(info))
 
     return saveQuestionAnswer(info)
       .catch((e) => {
