@@ -13,6 +13,8 @@ class QuestionPage extends Component {
 	}
 	handleFormSubmit = (formSubmitEvent) => {
 		formSubmitEvent.preventDefault()
+		const { selectedOption } = this.state
+		const { id, authedUser, dispatch } = this.props
 		console.log("You have selected:", this.state.selectedOption)
 	}
 	render() {
@@ -86,6 +88,7 @@ function mapStateToProsp({ authedUser, questions, users }, props) {
 
 	return {
 		id,
+		authedUser,
 		author,
 		question: question,
 	}
