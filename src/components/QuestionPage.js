@@ -1,4 +1,5 @@
 import React, { Component } from "react"
+import { handleAddQuestionAswer } from '../actions/questions'
 import { connect } from "react-redux"
 
 class QuestionPage extends Component {
@@ -15,7 +16,12 @@ class QuestionPage extends Component {
 		formSubmitEvent.preventDefault()
 		const { selectedOption } = this.state
 		const { id, authedUser, dispatch } = this.props
-		console.log("You have selected:", this.state.selectedOption)
+
+		dispatch(handleAddQuestionAswer({
+			authedUser,
+			qid: id, 
+			answer: selectedOption
+		}))
 	}
 	render() {
 		const { question } = this.props
