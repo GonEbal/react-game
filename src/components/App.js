@@ -7,6 +7,7 @@ import { handleInitialData } from "../actions/shared"
 import Dashboard from './Dashboard'
 import QuestionPage from './QuestionPage'
 import Nav from './Nav'
+import Result from './Result'
 
 class App extends Component {
 	componentDidMount() {
@@ -26,6 +27,7 @@ class App extends Component {
 								</div>
 								<Route path='/' exact component={Dashboard} />
 								<Route path='/question/:id' exact component={QuestionPage} />
+								<Route path='/result/:id' exact component={Result} />
 							</div>}
 					</div>
 				</Fragment>

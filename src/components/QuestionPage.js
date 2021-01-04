@@ -1,10 +1,12 @@
 import React, { Component } from "react"
 import { handleAddQuestionAswer } from '../actions/questions'
 import { connect } from "react-redux"
+import { Redirect } from 'react-router-dom'
 
 class QuestionPage extends Component {
 	state = {
 		selectedOption: "optionOne",
+		toResult: false,
 	}
 
 	handleOptionChange = (e) => {
@@ -22,10 +24,18 @@ class QuestionPage extends Component {
 			qid: id, 
 			answer: selectedOption
 		}))
+		this.setState(() => ({
+	      toResult: id ? true : false,
+	    }))
 	}
 	render() {
 		const { question } = this.props
 		const { avatarURL, name } = this.props.author
+		const { toResult } = this.state
+
+	    if (toResult === true) {
+	      return <Redirect to={`/result/${this.props.id}`} />
+	    }
 		return (
 			<div className="container_body">
 				<div className="user_asks">
@@ -96,7 +106,7 @@ function mapStateToProsp({ authedUser, questions, users }, props) {
 		id,
 		authedUser,
 		author,
-		question: question,
+		question,
 	}
 }
 
