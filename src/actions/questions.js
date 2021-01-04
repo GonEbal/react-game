@@ -3,6 +3,7 @@ import { showLoading, hideLoading } from 'react-redux-loading'
 
 export const RECEIVE_QUESTIONS = 'RECEIVE_QUESTIONS'
 export const ADD_QUESTION_ANSWER = 'ADD_QUESTION_ANSWER'
+export const ADD_QUESTION_ANSWER_USER = 'ADD_QUESTION_ANSWER_USER'
 export const ADD_QUESTION = 'ADD_QUESTION'
 
 export function receiveQuestions (questions) {
@@ -43,9 +44,29 @@ function questionAswer ({ authedUser, qid, answer }) {
   }
 }
 
+function questionAswerUser ({ authedUser, qid, answer }) {
+  return {
+    type: ADD_QUESTION_ANSWER_USER,
+    authedUser,
+    qid,
+    answer
+  }
+}
+
+// export function handleAddQuestionAswer (info) {
+//   return (dispatch) => {
+//     dispatch(showLoading())
+
+//     return saveQuestionAnswer(info)
+//       .then((value) => console.log(value))
+//       .then(() => dispatch(hideLoading()))
+//   }
+// }
+
 export function handleAddQuestionAswer (info) {
   return (dispatch) => {
     dispatch(questionAswer(info))
+    dispatch(questionAswerUser(info))
 
     return saveQuestionAnswer(info)
       .catch((e) => {

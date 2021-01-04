@@ -8,9 +8,7 @@ export default function questions(state = {}, action) {
                 ...action.questions
             }
         case ADD_QUESTION_ANSWER:
-        	
         	const { answer } = action
-        	console.log(state[action.qid][answer])
         	return {
         		...state,
                 [action.qid]: {
