@@ -260,7 +260,7 @@ form button {
   text-align: center;
 }
 
-.one {
+.selected {
   border: 2px solid #6bcba7;
   background: #F3FFFC;
   color: #3EBD8A;
