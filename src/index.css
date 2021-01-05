@@ -1,231 +1,271 @@
 body {
-  margin: 0;
-  padding: 0;
-  font-family: sans-serif;
-  color: #252525;
+    margin: 0;
+    padding: 0;
+    font-family: sans-serif;
+    color: #252525;
 }
 
 code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+    font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+        monospace;
 }
 
 .Navbar {
-	display: flex;
-	justify-content: space-between;
+    display: flex;
+    justify-content: space-between;
 }
 
 a {
-  text-decoration: none;
-  color: #252525;
+    text-decoration: none;
+    color: #252525;
 }
 
 /* Answered & Unswered buttons */
 
 .button_container {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  justify-content: space-around;
-  flex-wrap: wrap;
-  width: 100%;
-  border-bottom: 1px solid #dad7d7;
-  cursor: pointer;
-  margin-bottom: 10px;
-  min-height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    width: 100%;
+    border-bottom: 1px solid #dad7d7;
+    cursor: pointer;
+    margin-bottom: 10px;
+    min-height: 40px;
 }
 
 button {
-  border: none;
-  padding: 15px 32px;
-  text-decoration: none;
-  font-size: 16px;
-  background: white;
-  cursor: pointer;
+    border: none;
+    padding: 15px 32px;
+    text-decoration: none;
+    font-size: 16px;
+    background: white;
+    cursor: pointer;
 }
 
 .button_container .box {
-  width: 50%;
-  min-height: 40px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  border: none;
-  outline: none !important;
+    width: 50%;
+    min-height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: none;
+    outline: none !important;
 }
 
 .button_container .box.shadow {
-  background: #E5E5E5;
-  border-radius: 1px;
-  color: #3EBD8A;
-  font-weight: bold;
+    background: #E5E5E5;
+    border-radius: 1px;
+    color: #3EBD8A;
+    font-weight: bold;
 
 }
+
 /* END (Answered & Unswered buttons) */
 
 .container {
-  max-width: 1000px;
-  margin: 0 auto;
-  padding: 10px;
+    max-width: 1000px;
+    margin: 0 auto;
+    padding: 10px;
 }
 
 .container_body {
-  width: 100%;
-  max-width: 620px;
-  margin: 0 auto;
-  border: 1px solid #dad7d7;
-  border-radius: 3px;
-  cursor: pointer;
-  margin-bottom: 10px;
-  height: auto;
+    width: 100%;
+    max-width: 620px;
+    margin: 0 auto;
+    border: 1px solid #dad7d7;
+    border-radius: 3px;
+    cursor: pointer;
+    margin-bottom: 10px;
+    height: auto;
 }
 
 .btn {
-  text-transform: uppercase;
-  margin: 35px auto;
-  padding: 10px;
-  border: 1px solid rgba(0,0,0,.29);
-  cursor: pointer;
-  background: #fff;
-  font-size: 16px;
-  width: 250px;
-  position: relative;
+    text-transform: uppercase;
+    margin: 35px auto;
+    padding: 10px;
+    border: 1px solid rgba(0, 0, 0, .29);
+    cursor: pointer;
+    background: #fff;
+    font-size: 16px;
+    width: 250px;
+    position: relative;
 }
 
 .btn:hover {
-  border-color: rgba(0,0,0,.5);
-  text-decoration: none;
+    border-color: rgba(0, 0, 0, .5);
+    text-decoration: none;
 }
 
 .btn:focus {
-  outline: 0;
-  font-weight: 700;
-  border-width: 2px;
+    outline: 0;
+    font-weight: 700;
+    border-width: 2px;
 }
 
 .center {
-  text-align: center;
+    text-align: center;
 }
 
 .active {
-  font-weight: bold;
+    font-weight: bold;
 }
 
 .nav ul {
-  display: flex;
-  flex-direction: row;
-  justify-content: flex-start;
-  text-decoration: none;
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    text-decoration: none;
 }
 
 .nav li:first-child {
-  padding-left: 0;
+    padding-left: 0;
 }
 
 .nav_username ul {
-  display: flex;
-  flex-direction: row;
-  justify-content: flex-start;
-  text-decoration: none;
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    text-decoration: none;
 }
 
 .nav_username li:first-child {
-  padding-left: 0;
+    padding-left: 0;
 }
 
 ul {
-  padding-left: 0;
+    padding-left: 0;
 }
 
 li {
-  list-style-type: none;
-  padding: 10px;
-  text-decoration: none;
+    list-style-type: none;
+    padding: 10px;
+    text-decoration: none;
 }
 
 .question {
-  width: 100%;
-  max-width: 590px;
-  padding: 0;
-  margin: 0 auto;
-  border: 1px solid #dad7d7;
-  border-radius: 3px;
-  cursor: pointer;
-  margin-bottom: 10px;
+    width: 100%;
+    max-width: 590px;
+    padding: 0;
+    margin: 0 auto;
+    border: 1px solid #dad7d7;
+    border-radius: 3px;
+    cursor: pointer;
+    margin-bottom: 10px;
 }
 
 .question-inner {
-  display: flex;
+    display: flex;
 }
 
 .user_asks {
-  border-bottom: 1px solid #dad7d7;
-  border-radius: 2px 0 0;
-  padding: 10px 10px;
-  background: #F5F5F5;
-  font-weight: bold;
+    border-bottom: 1px solid #dad7d7;
+    border-radius: 2px 0 0;
+    padding: 10px 10px;
+    background: #F5F5F5;
+    font-weight: bold;
 }
-  
+
 .avatar {
-  height: 120px;
-  width: 120px;
-  border-radius: 50%;
-  margin: 10px;
+    height: 120px;
+    width: 120px;
+    border-radius: 50%;
+    margin: 10px;
 }
 
 .question-info {
-  margin: 10px;
-  display: flex;
-  flex-direction: column;
+    margin: 10px;
+    display: flex;
+    flex-direction: column;
 }
 
-.question-info > div > span:first-child {
-  font-weight: bold;
-  margin-right: 5px;
+.question-info>div>span:first-child {
+    font-weight: bold;
+    margin-right: 5px;
 }
 
-.question-info  > div > p {
-  font-size: 18px;
-  margin: 10px 0;
+.question-info>div>p {
+    font-size: 18px;
+    margin: 10px 0;
 }
 
 .view_poll_btn {
-  background-color:transparent;
-  border-radius: 5px;
-  border:2px solid #3EBD8A;
-  cursor:pointer;
-  color:#3EBD8A;
-  font-size:17px;
-  padding: 4px 80px;
+    background-color: transparent;
+    border-radius: 5px;
+    border: 2px solid #3EBD8A;
+    cursor: pointer;
+    color: #3EBD8A;
+    font-size: 17px;
+    padding: 4px 80px;
 }
 
 /* QuestionPage Component */
 
 form input {
-  margin: 7px;
+    margin: 7px;
 }
 
 form button {
-  display: flex;
+    display: flex;
 }
 
 .submit_poll_btn {
-  margin: 7px;
-  background: #3EBD8A;
-  border-radius: 5px;
-  cursor:pointer;
-  color: white;
-  font-size:17px;
-  padding: 5px 85px;
+    margin: 7px;
+    background: #3EBD8A;
+    border-radius: 5px;
+    cursor: pointer;
+    color: white;
+    font-size: 17px;
+    padding: 5px 85px;
 }
 
 /* Result Component */
 .result-info {
-  margin: 10px;
-  display: flex;
-  flex-direction: column;
+    margin: 10px;
+    display: flex;
+    flex-direction: column;
+    width: 100%;
 }
 
-.result-info > div > span:first-child {
+.result-info>div>span:first-child {
+    font-weight: bold;
+}
+
+.progress_bar {
+    background-color: #DEDEDE;
+    width: 80%;
+    border-radius: 4px;
+    margin: 0 auto;
+}
+
+.progress {
+    background-color: #3EBD8A;
+    color: white;
+    padding: 1%;
+    text-align: right;
+    font-size: 15px;
+    border-radius: 4px;
+}
+
+.option {
+  background: #FAFAFA;
+  width: 70%;
+  max-width: 590px;
+  padding: 5px;
+  border: 2px solid #dad7d7;
+  border-radius: 3px;
+  margin-bottom: 15px;
   font-weight: bold;
+  text-align: center;
+}
+
+.one {
+  border: 2px solid #6bcba7;
+  background: #F3FFFC;
+  color: #3EBD8A;
+}
+
+.answer_count {
+  color: black;
 }
