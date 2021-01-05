@@ -8,6 +8,7 @@ import Dashboard from './Dashboard'
 import QuestionPage from './QuestionPage'
 import Nav from './Nav'
 import Result from './Result'
+import ProgressBar from 'react-bootstrap/ProgressBar'
 
 class App extends Component {
 	componentDidMount() {
@@ -19,6 +20,7 @@ class App extends Component {
 				<Fragment>
 					<LoadingBar />
 					<div className="container">
+					<ProgressBar now={60} variant="danger" label='60%' />
 						{this.props.loading === true 
 							? null 
 							: <div>

@@ -184,7 +184,7 @@ li {
   margin-right: 5px;
 }
 
-.question-info > div > p {
+.question-info  > div > p {
   font-size: 18px;
   margin: 10px 0;
 }
@@ -217,4 +217,15 @@ form button {
   color: white;
   font-size:17px;
   padding: 5px 85px;
+}
+
+/* Result Component */
+.result-info {
+  margin: 10px;
+  display: flex;
+  flex-direction: column;
+}
+
+.result-info > div > span:first-child {
+  font-weight: bold;
 }
