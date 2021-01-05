@@ -2,28 +2,17 @@ import React, { Component } from "react"
 import { connect } from "react-redux"
 
 class Result extends Component {
-	state = {
-		optionOne_class: '',
-		optionTwo_class: '',
-	}
-	componentDidMount() {
-		const { authedUser_answer } = this.props
-		if (authedUser_answer === "optionOne") {
-			this.setState({ optionOne_class: 'option selected',
-							optionTwo_class: 'option'})
-		} else if (authedUser_answer === "optionTwo") {
-			this.setState({ optionOne_class: 'option',
-							optionTwo_class: 'option selected'})
-		}
-	}
 	render() {
 		const { avatarURL, name } = this.props.author
 		const {
 			total_answers,
-			this_answer_count,
-			progress,
+			selected_option_count,
+			unselected_option_count,
+			selected_option_progress,
+			unselected_option_progress,
+			selected_option,
+			unselected_option,
 		} = this.props
-		const { optionOne_class, optionTwo_class } = this.state
 
 		return (
 			<div className="container_body">
@@ -40,32 +29,38 @@ class Result extends Component {
 						<div>
 							<span>Results:</span>
 						</div>
-						<div className={optionOne_class}>
-							<p>Would you ...</p>
+						<div className="option selected">
+							<p>Would you {selected_option.text}?</p>
 							<div className="progress_bar">
 								<div
-									style={{ width: `${progress}%` }}
+									style={{
+										width: `${selected_option_progress}%`,
+									}}
 									className="progress"
 								>
-									{progress}%
+									{selected_option_progress}%
 								</div>
 							</div>
 							<p className="answer_count">
-								{this_answer_count} out of {total_answers} votes
+								{selected_option_count} out of {total_answers}{" "}
+								votes
 							</p>
 						</div>
-						<div className= {optionTwo_class}>
-							<p>Would you ...</p>
+						<div className="option">
+							<p>Would you {unselected_option.text}?</p>
 							<div className="progress_bar">
 								<div
-									style={{ width: `${progress}%` }}
+									style={{
+										width: `${unselected_option_progress}%`,
+									}}
 									className="progress"
 								>
-									{progress}%
+									{unselected_option_progress}%
 								</div>
 							</div>
 							<p className="answer_count">
-								{this_answer_count} out of {total_answers} votes
+								{unselected_option_count} out of {total_answers}{" "}
+								votes
 							</p>
 						</div>
 					</div>
@@ -85,15 +80,33 @@ function mapStateToProsp({ authedUser, questions, users }, props) {
 
 	const authedUser_answer = users[authedUser].answers[id]
 
-	const this_answer_count = Object.keys(question[authedUser_answer].votes)
-		.length
+	const selected_option = question[authedUser_answer]
+
+	let unselected_option = ""
+	if (selected_option.text === question.optionOne.text) {
+		unselected_option = question.optionTwo
+	} else {
+		unselected_option = question.optionOne
+	}
+
+	const selected_option_count = Object.keys(selected_option.votes).length
+	const unselected_option_count = Object.keys(unselected_option.votes).length
 
 	return {
-		total_answers,
-		authedUser_answer,
-		this_answer_count,
 		author,
-		progress: ((this_answer_count * 100) / total_answers).toFixed(1),
+		total_answers,
+		selected_option_count,
+		unselected_option_count,
+		selected_option_progress: (
+			(selected_option_count * 100) /
+			total_answers
+		).toFixed(1),
+		unselected_option_progress: (
+			(unselected_option_count * 100) /
+			total_answers
+		).toFixed(1),
+		selected_option,
+		unselected_option,
 	}
 }
 

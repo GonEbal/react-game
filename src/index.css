@@ -249,23 +249,23 @@ form button {
 }
 
 .option {
-  background: #FAFAFA;
-  width: 70%;
-  max-width: 590px;
-  padding: 5px;
-  border: 2px solid #dad7d7;
-  border-radius: 3px;
-  margin-bottom: 15px;
-  font-weight: bold;
-  text-align: center;
+    background: #FAFAFA;
+    width: 70%;
+    max-width: 590px;
+    padding: 5px;
+    border: 2px solid #dad7d7;
+    border-radius: 3px;
+    margin-bottom: 15px;
+    font-weight: bold;
+    text-align: center;
 }
 
 .selected {
-  border: 2px solid #6bcba7;
-  background: #F3FFFC;
-  color: #3EBD8A;
+    border: 2px solid #6bcba7;
+    background: #F3FFFC;
+    color: #3EBD8A;
 }
 
 .answer_count {
-  color: black;
+    color: black;
 }
