@@ -159,6 +159,12 @@ li {
     display: flex;
 }
 
+.result_inner {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
 .user_asks {
     border-bottom: 1px solid #dad7d7;
     border-radius: 2px 0 0;
@@ -171,9 +177,7 @@ li {
     height: 120px;
     width: 120px;
     border-radius: 50%;
-    margin: auto;
-    margin-left: 10px;
-    margin-right: 10px;
+    margin: 10px;
 }
 
 .question-info {

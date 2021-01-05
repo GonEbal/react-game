@@ -19,7 +19,7 @@ class Result extends Component {
 				<div className="user_asks">
 					<span>Asked by {name}</span>
 				</div>
-				<div className="question-inner">
+				<div className="result_inner">
 					<img
 						src={avatarURL}
 						alt={`Avatar of ${name}`}
