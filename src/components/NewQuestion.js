@@ -1,4 +1,5 @@
 import React, { Component } from "react"
+import { connect } from "react-redux"
 
 class NewQuestion extends Component {
 	state = {
@@ -13,7 +14,21 @@ class NewQuestion extends Component {
 			[e.target.name]: value,
 		}))
 	}
+	handleSubmit = (e) => {
+		e.preventDefault()
+
+		const { optionOne, optionTwo } = this.state
+		const { dispatch } = this.props
+
+		//dispatch(handleAddTweet(text, id))
+
+		this.setState(() => ({
+			optionOne: "",
+			optionTwo: "",
+		}))
+	}
 	render() {
+		const { optionOne, optionTwo } = this.state
 		return (
 			<div className="container_body">
 				<div className="title_newq">
@@ -27,7 +42,10 @@ class NewQuestion extends Component {
 						<span>Would you rather ...</span>
 					</div>
 					<div className="newq-info">
-						<form className="create_form">
+						<form
+							className="create_form"
+							onSubmit={this.handleSubmit}
+						>
 							<input
 								type="text"
 								name="optionOne"
@@ -45,7 +63,11 @@ class NewQuestion extends Component {
 								onChange={this.handleChange}
 								placeholder="Enter Option Two Text Here"
 							/>
-							<button className="submit_new_btn" type="submit">
+							<button
+								className="submit_new_btn"
+								type="submit"
+								disabled={optionOne === "" || optionTwo === ""}
+							>
 								Submit
 							</button>
 						</form>
@@ -56,4 +78,4 @@ class NewQuestion extends Component {
 	}
 }
 
-export default NewQuestion
+export default connect()(NewQuestion)

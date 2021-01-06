@@ -328,7 +328,17 @@ form input {
   color: white;
   padding: 10px 20px;
   margin: 8px 0;
-  border: none;
   border-radius: 4px;
-  cursor: pointer;
+  border: 2px solid #3EBD8A;
+}
+
+.submit_new_btn:disabled {
+    background-color: #dad7d7;
+    cursor: not-allowed;
+    border: 2px solid #dad7d7;
+}
+
+.submit_new_btn:disabled:hover {
+    background-color: #dad7d7;
+    border: 2px solid red;
 }
