@@ -340,5 +340,5 @@ form input {
 
 .submit_new_btn:disabled:hover {
     background-color: #dad7d7;
-    border: 2px solid red;
+    border: 2px solid #E61E10;
 }
