@@ -3,7 +3,7 @@ import { connect } from "react-redux"
 
 class LeaderBoardUser extends Component {
     render() {
-        const { user } = this.props
+        const { user, answered, created } = this.props
         return (
             <Fragment>
 				<div className="leaderboard-inner">
@@ -22,7 +22,13 @@ class LeaderBoardUser extends Component {
 							<span>Answered Questions</span>
 						</div>
 						<div>
+							<span>{answered}</span>
+						</div>
+						<div>
 							<span>Created Questions</span>
+						</div>
+						<div>
+							<span>{created}</span>
 						</div>
 					</div>
 					<div className="right-column-result">
@@ -31,7 +37,7 @@ class LeaderBoardUser extends Component {
 						</div>
 						<div className='points'>
 								<div className='points-circle'>
-									8
+									{created+answered}
 								</div>
 						</div>
 					</div>
@@ -43,8 +49,12 @@ class LeaderBoardUser extends Component {
 
 function mapStateToProps({ users }, { id }) {
     const user = users[id]
+    const answered = Object.values(user.answers).length
+    const created = Object.values(user.questions).length
     return {
         user,
+        answered,
+        created
     }
 }
 
