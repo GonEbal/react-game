@@ -1,21 +1,51 @@
-import React, { Component } from 'react'
+import React, { Component, Fragment } from "react"
 import { connect } from "react-redux"
 
 class LeaderBoardUser extends Component {
-	render() {
-		const { id } = this.props
-		return (
-			<div>
-				{id}
-			</div>
-		)
-	}
+    render() {
+        const { user } = this.props
+        return (
+            <Fragment>
+				<div className="leaderboard-inner">
+					<div className="left-column-result">
+						<img
+							src={user.avatarURL}
+							alt={`Avatar of ${user.name}`}
+							className="avatar"
+						/>
+					</div>
+					<div className='result-main'>
+						<div className='leader-name'>
+							<span>{user.name}</span>
+						</div>
+						<div>
+							<span>Answered Questions</span>
+						</div>
+						<div>
+							<span>Created Questions</span>
+						</div>
+					</div>
+					<div className="right-column-result">
+						<div className='score'>
+							<span>Score</span>
+						</div>
+						<div className='points'>
+								<div className='points-circle'>
+									8
+								</div>
+						</div>
+					</div>
+				</div>
+			</Fragment>
+        )
+    }
 }
 
 function mapStateToProps({ users }, { id }) {
- 	return {
-		id
-	}
+    const user = users[id]
+    return {
+        user,
+    }
 }
 
 export default connect(mapStateToProps)(LeaderBoardUser)
