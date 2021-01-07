@@ -5,6 +5,8 @@ export const RECEIVE_QUESTIONS = "RECEIVE_QUESTIONS"
 export const ADD_QUESTION_ANSWER = "ADD_QUESTION_ANSWER"
 export const ADD_QUESTION_ANSWER_USER = "ADD_QUESTION_ANSWER_USER"
 export const ADD_QUESTION = "ADD_QUESTION"
+export const ADD_QUESTION_USER = "ADD_QUESTION_USER"
+
 
 export function receiveQuestions(questions) {
   return {
@@ -20,6 +22,13 @@ function addQuestion(question) {
   }
 }
 
+function addQuestionUser(question) {
+  return {
+    type: ADD_QUESTION_USER,
+    question,
+  }
+}
+
 export function handleAddQuestion(optionOneText, optionTwoText) {
   return (dispatch, getState) => {
     const { authedUser } = getState()
@@ -31,6 +40,7 @@ export function handleAddQuestion(optionOneText, optionTwoText) {
       author: authedUser,
     })
       .then((question) => dispatch(addQuestion(question)))
+      .then((question) => dispatch(addQuestionUser({question, authedUser})))
       .then(() => dispatch(hideLoading()))
   }
 }

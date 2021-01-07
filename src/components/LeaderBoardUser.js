@@ -19,15 +19,11 @@ class LeaderBoardUser extends Component {
 							<span>{user.name}</span>
 						</div>
 						<div>
-							<span>Answered Questions</span>
-						</div>
-						<div>
+							<span className='points-table'>Answered Questions</span>
 							<span>{answered}</span>
 						</div>
 						<div>
-							<span>Created Questions</span>
-						</div>
-						<div>
+							<span className='points-table'>Created Questions</span>
 							<span>{created}</span>
 						</div>
 					</div>
