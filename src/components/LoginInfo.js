@@ -11,7 +11,7 @@ export default function LoginInfo() {
           </NavLink>
         </li>
         <li>
-          <NavLink to="/logout" activeClassName="active">
+          <NavLink to="/login" activeClassName="active">
             Logout
           </NavLink>
         </li>
