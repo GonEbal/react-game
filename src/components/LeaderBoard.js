@@ -17,8 +17,11 @@ class LeaderBoard extends Component {
 }
 
 function mapStateToProps({ users }) {
+	let sorted_leaders = Object.values(users).sort(function (one, other) {
+	   return (Object.values(other.answers).length + Object.values(other.questions).length) - (Object.values(one.answers).length + Object.values(one.questions).length)
+	})
 	return {
-		users: Object.values(users).map((user) => user.id)
+		users: sorted_leaders.map((user) => user.id)
 	}
 }
 
