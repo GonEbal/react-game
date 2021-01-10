@@ -3,8 +3,28 @@ import logo from '../loginicon.png'
 import { connect } from "react-redux"
 
 class Login extends Component {
+	state = {
+		selectedUser: "",
+		toMain: false,
+	}
+
+	handleChange = (e) => {
+		this.setState({
+			selectedUser: e.target.value,
+		})
+	}
+	handleSubmit = (formSubmitEvent) => {
+		formSubmitEvent.preventDefault()
+		const { selectedUser } = this.state
+		const { authedUser } = this.props
+		console.log(authedUser)
+		this.setState(() => ({
+			toMain: authedUser ? true : false,
+		}))
+	}
 	render() {
 		const { users } = this.props
+		const { selectedUser } = this.state
 		return (
 			<div className="container_body">
 				<div className="login-greeting">
@@ -18,8 +38,8 @@ class Login extends Component {
 						className='logo'
 					/>
 					<p>Sign in</p>
-					<form>
-						<select className='select-login'>
+					<form onSubmit={this.handleSubmit}>
+						<select className='select-login' onChange={this.handleChange} value={selectedUser}>
 						{users.map((user) => (
 				            <option value={user.id}>{user.name}</option>
 				        ))}
@@ -37,6 +57,7 @@ class Login extends Component {
 
 function mapStateToProsp({ authedUser, users }) {
 	return {
+		authedUser,
 		users: Object.values(users).map((user) => user),
 	}
 }
