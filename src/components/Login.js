@@ -1,10 +1,11 @@
 import React, { Component } from 'react'
 import logo from '../loginicon.png'
 import { connect } from "react-redux"
+import { handleSetAuthedUser } from "../actions/authedUser"
 
 class Login extends Component {
 	state = {
-		selectedUser: "",
+		selectedUser: "none",
 		toMain: false,
 	}
 
@@ -16,8 +17,10 @@ class Login extends Component {
 	handleSubmit = (formSubmitEvent) => {
 		formSubmitEvent.preventDefault()
 		const { selectedUser } = this.state
-		const { authedUser } = this.props
+		const { authedUser, dispatch } = this.props
 		console.log(authedUser)
+
+		dispatch(handleSetAuthedUser(selectedUser))
 		this.setState(() => ({
 			toMain: authedUser ? true : false,
 		}))
@@ -40,12 +43,15 @@ class Login extends Component {
 					<p>Sign in</p>
 					<form onSubmit={this.handleSubmit}>
 						<select className='select-login' onChange={this.handleChange} value={selectedUser}>
-						{users.map((user) => (
-				            <option value={user.id}>{user.name}</option>
-				        ))}
+							<option value="none" disabled hidden> 
+					          Select User 
+					      	</option>
+							{users.map((user) => (
+					            <option key={user.id} value={user.id}>{user.name}</option>
+					        ))}
 					  </select>
 					  <br/>
-						<button className='sign-btn'>
+						<button className='sign-btn' disabled={selectedUser === "none"}>
 							Sign in
 						</button>
 					</form>

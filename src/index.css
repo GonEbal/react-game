@@ -114,6 +114,7 @@ button {
 
 .active {
     font-weight: bold;
+    color: #3EBD8A
 }
 
 .nav ul {
@@ -497,4 +498,15 @@ form input {
     padding: 8px 20px;
     margin: 8px 0;
     border-radius: 4px;
+}
+
+.sign-btn:disabled {
+    background-color: #dad7d7;
+    cursor: not-allowed;
+    border: 2px solid #dad7d7;
+}
+
+.sign-btn:disabled:hover {
+    background-color: #dad7d7;
+    border: 2px solid #E61E10;
 }
