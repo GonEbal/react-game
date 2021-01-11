@@ -70,7 +70,7 @@ class Result extends Component {
 	}
 }
 
-function mapStateToProsp({ authedUser, questions, users }, props) {
+function mapStateToProps({ authedUser, questions, users }, props) {
 	const { id } = props.match.params
 	const question = questions[id]
 	const author = users[question.author]
@@ -110,4 +110,4 @@ function mapStateToProsp({ authedUser, questions, users }, props) {
 	}
 }
 
-export default connect(mapStateToProsp)(Result)
+export default connect(mapStateToProps)(Result)

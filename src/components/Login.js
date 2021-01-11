@@ -61,11 +61,11 @@ class Login extends Component {
 	}
 }
 
-function mapStateToProsp({ authedUser, users }) {
+function mapStateToProps({ authedUser, users }) {
 	return {
 		authedUser,
 		users: Object.values(users).map((user) => user),
 	}
 }
 
-export default connect(mapStateToProsp)(Login)
+export default connect(mapStateToProps)(Login)

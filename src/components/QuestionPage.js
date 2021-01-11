@@ -7,6 +7,13 @@ class QuestionPage extends Component {
 	state = {
 		selectedOption: "optionOne",
 		toResult: false,
+		hasError: false,
+	}
+	componentDidCatch(error, info) {
+	    // Display fallback UI
+	    this.setState({ hasError: true });
+	    // You can also log the error to an error reporting service
+	    //logErrorToMyService(error, info);
 	}
 
 	handleOptionChange = (e) => {
@@ -37,6 +44,10 @@ class QuestionPage extends Component {
 		if (toResult === true) {
 			return <Redirect to={`/result/${this.props.id}`} />
 		}
+		if (this.state.hasError) {
+	      // You can render any custom fallback UI
+	      return <h1>Something went wrong.</h1>;
+	    }
 		return (
 			<div className="container_body">
 				<div className="user_asks">
@@ -98,7 +109,7 @@ class QuestionPage extends Component {
 	}
 }
 
-function mapStateToProsp({ authedUser, questions, users }, props) {
+function mapStateToProps({ authedUser, questions, users }, props) {
 	const { id } = props.match.params
 	const question = questions[id]
 	const author = users[question.author]
@@ -111,4 +122,4 @@ function mapStateToProsp({ authedUser, questions, users }, props) {
 	}
 }
 
-export default connect(mapStateToProsp)(QuestionPage)
+export default connect(mapStateToProps)(QuestionPage)
