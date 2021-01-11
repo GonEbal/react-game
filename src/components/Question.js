@@ -1,13 +1,13 @@
-import React, { Component } from "react"
+import React, { Component, Fragment } from "react"
 import { connect } from "react-redux"
-import { Link, withRouter } from 'react-router-dom'
+import { Link, withRouter } from "react-router-dom"
 
 class Question extends Component {
 	render() {
-		const { answer } = this.props
+		const { answer, answered } = this.props
 		const { avatarURL, name } = this.props.author
 		return (
-			<Link to={`/question/${this.props.id}`} >
+			<Fragment>
 				<div className="user_asks">
 					<span>{name} asks:</span>
 				</div>
@@ -21,11 +21,23 @@ class Question extends Component {
 						<div>
 							<span>Would you rather</span>
 							<p>...{answer}...</p>
-							<button className='view_poll_btn'>View Poll</button>
+							{answered === false ? (
+								<Link to={`/question/${this.props.id}`}>
+									<button className="view_poll_btn">
+										View Poll
+									</button>
+								</Link>
+							) : (
+								<Link to={`/result/${this.props.id}`}>
+									<button className="view_poll_btn">
+										View Poll
+									</button>
+								</Link>
+							)}
 						</div>
 					</div>
 				</div>
-			</Link>
+			</Fragment>
 		)
 	}
 }

@@ -43,14 +43,14 @@ class Dashboard extends Component {
         <div style={{ display: this.state.show_answered ? "block" : "none" }}>
           {this.props.answered_q.map((id) => (
             <li key={id} className="question">
-              <Question id={id} />
+              <Question id={id} answered={true}/>
             </li>
           ))}
         </div>
         <div style={{ display: !this.state.show_answered ? "block" : "none" }}>
           {this.props.unanswered_q.map((id) => (
             <li key={id} className="question">
-              <Question id={id} />
+              <Question id={id} answered={false} />
             </li>
           ))}
         </div>
