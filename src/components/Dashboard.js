@@ -4,7 +4,7 @@ import Question from "./Question"
 
 class Dashboard extends Component {
   state = {
-    show_answered: true,
+    show_answered: false,
   }
 
   unanswered = () => {
@@ -34,11 +34,11 @@ class Dashboard extends Component {
     return (
       <div className="container_body">
         <div className="button_container">
-          <button id="box1" className="box shadow" onClick={this.answered}>
-            Answered Questions
-          </button>
-          <button id="box2" className="box" onClick={this.unanswered}>
+          <button id="box2" className="box shadow" onClick={this.unanswered}>
             Unanswered Questions
+          </button>
+          <button id="box1" className="box" onClick={this.answered}>
+            Answered Questions
           </button>
         </div>
         <div style={{ display: this.state.show_answered ? "block" : "none" }}>
