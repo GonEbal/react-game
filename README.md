@@ -1,6 +1,13 @@
 # Would You Rather Project
 
-The `_DATA.js` file represents a fake database and methods that let you access the data. The only thing you need to edit in the ` _DATA.js` file is the value of `avatarURL`. Each user should have an avatar, so you’ll need to add the path to each user’s avatar.
+[Would You Rather](https://github.com/GonEbal/react-game.git) is a react-redux web app that poses a dilemma in the form of a question beginning with "Would You Rather".
+
+## Project Setup
+
+* clone the Project - `https://github.com/GonEbal/react-game.git`
+* install the dependencies - `npm install`
+
+The `_DATA.js` file represents a fake database and methods that let you access the data. Some methods are represents in `api.js` file.
 
 ## Data
 
@@ -42,7 +49,7 @@ Voting options are attached to questions. They include:
 | votes             | Array | A list that contains the id of each user who voted for that option|
 | text                | String | The text of the option |
 
-Your code will talk to the database via 4 methods:
+4 methods:
 
 * `_getUsers()`
 * `_getQuestions()`
