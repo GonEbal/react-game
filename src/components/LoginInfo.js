@@ -1,5 +1,4 @@
 import React, { Component } from "react"
-import { NavLink } from "react-router-dom"
 import { connect } from 'react-redux'
 import { handleRemoveAuthedUser } from "../actions/authedUser"
 
@@ -12,13 +11,11 @@ class LoginInfo extends Component {
     const { username } = this.props
     return (
       <nav className="nav_username">
-        <ul>
-          <li>
-            <NavLink to="/" activeClassName="active">
+        <ul className='log'>
+          <li className="active">
               Hello, {username}
-            </NavLink>
           </li>
-          <li onClick={this.logOut}>
+          <li className="logout" onClick={this.logOut}>
               Logout
           </li>
         </ul>

@@ -510,3 +510,11 @@ form input {
     background-color: #dad7d7;
     border: 2px solid #E61E10;
 }
+
+.log {
+    cursor: pointer;
+}
+
+.logout:hover {
+    color: #BA9B35;
+}

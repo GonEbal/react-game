@@ -43,7 +43,7 @@ class Login extends Component {
 					<p>Sign in</p>
 					<form onSubmit={this.handleSubmit}>
 						<select className='select-login' onChange={this.handleChange} value={selectedUser}>
-							<option value="none" disabled hidden> 
+							<option value="none" disabled> 
 					          Select User 
 					      	</option>
 							{users.map((user) => (
