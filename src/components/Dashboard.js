@@ -29,7 +29,6 @@ class Dashboard extends Component {
       this.setState({ show_answered: !this.state.show_answered })
     }
   }
-
   render() {
     return (
       <div className="container_body">
@@ -66,7 +65,7 @@ function mapStateToProps({ questions, authedUser, users }) {
       valueName.optionOne.votes.includes(authedUser) ||
       valueName.optionTwo.votes.includes(authedUser)
   )
-
+  
   const unanswered_questions = Object.values(questions).filter(
     (valueName) =>
       !valueName.optionOne.votes.includes(authedUser) &&
