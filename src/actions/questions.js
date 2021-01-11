@@ -7,7 +7,6 @@ export const ADD_QUESTION_ANSWER_USER = "ADD_QUESTION_ANSWER_USER"
 export const ADD_QUESTION = "ADD_QUESTION"
 export const ADD_QUESTION_USER = "ADD_QUESTION_USER"
 
-
 export function receiveQuestions(questions) {
   return {
     type: RECEIVE_QUESTIONS,

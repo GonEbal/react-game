@@ -1,35 +1,32 @@
 import React, { Component } from "react"
-import { connect } from 'react-redux'
+import { connect } from "react-redux"
 import { handleRemoveAuthedUser } from "../actions/authedUser"
 
 class LoginInfo extends Component {
   logOut = () => {
-    const { dispatch} = this.props
+    const { dispatch } = this.props
     dispatch(handleRemoveAuthedUser())
   }
   render() {
     const { username } = this.props
     return (
       <nav className="nav_username">
-        <ul className='log'>
-          <li className="active">
-              Hello, {username}
-          </li>
+        <ul className="log">
+          <li className="active">Hello, {username}</li>
           <li className="logout" onClick={this.logOut}>
-              Logout
+            Logout
           </li>
         </ul>
       </nav>
     )
   }
-} 
+}
 
-function mapStateToProps ({ authedUser, users }) {
+function mapStateToProps({ authedUser, users }) {
   const username = users[authedUser].name
   return {
-    username
+    username,
   }
 }
 
 export default connect(mapStateToProps)(LoginInfo)
-

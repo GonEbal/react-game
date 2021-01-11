@@ -1,5 +1,5 @@
-import React, { Component } from 'react'
-import logo from '../loginicon.png'
+import React, { Component } from "react"
+import logo from "../loginicon.png"
 import { connect } from "react-redux"
 import { handleSetAuthedUser } from "../actions/authedUser"
 
@@ -18,7 +18,6 @@ class Login extends Component {
 		formSubmitEvent.preventDefault()
 		const { selectedUser } = this.state
 		const { authedUser, dispatch } = this.props
-		console.log(authedUser)
 
 		dispatch(handleSetAuthedUser(selectedUser))
 		this.setState(() => ({
@@ -35,23 +34,28 @@ class Login extends Component {
 					<p>Please sign in to continue</p>
 				</div>
 				<div className="login_body">
-					<img
-						src={logo}
-						alt='logo'
-						className='logo'
-					/>
+					<img src={logo} alt="logo" className="logo" />
 					<p>Sign in</p>
 					<form onSubmit={this.handleSubmit}>
-						<select className='select-login' onChange={this.handleChange} value={selectedUser}>
-							<option value="none" disabled> 
-					          Select User 
-					      	</option>
+						<select
+							className="select-login"
+							onChange={this.handleChange}
+							value={selectedUser}
+						>
+							<option value="none" disabled>
+								Select User
+							</option>
 							{users.map((user) => (
-					            <option key={user.id} value={user.id}>{user.name}</option>
-					        ))}
-					  </select>
-					  <br/>
-						<button className='sign-btn' disabled={selectedUser === "none"}>
+								<option key={user.id} value={user.id}>
+									{user.name}
+								</option>
+							))}
+						</select>
+						<br />
+						<button
+							className="sign-btn"
+							disabled={selectedUser === "none"}
+						>
 							Sign in
 						</button>
 					</form>

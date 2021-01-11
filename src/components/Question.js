@@ -22,7 +22,7 @@ class Question extends Component {
 							<span>Would you rather</span>
 							<p>...{answer}...</p>
 							{answered === false ? (
-								<Link to={`/question/${this.props.id}`}>
+								<Link to={`/questions/${this.props.id}`}>
 									<button className="view_poll_btn">
 										View Poll
 									</button>
