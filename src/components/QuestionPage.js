@@ -2,6 +2,7 @@ import React, { Component } from "react"
 import { handleAddQuestionAswer } from "../actions/questions"
 import { connect } from "react-redux"
 import { Redirect } from "react-router-dom"
+import Result from "./Result"
 
 class QuestionPage extends Component {
 	state = {
@@ -32,6 +33,11 @@ class QuestionPage extends Component {
 	render() {
 		if (this.props.error) {
 			return <Redirect to={'/notfound'} />
+		}
+		if (this.props.location.state.answered === true) {
+			return(
+				<Result id={this.props.id}/>
+			)
 		}
 		const { question } = this.props
 		const { avatarURL, name } = this.props.author

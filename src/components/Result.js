@@ -76,7 +76,12 @@ class Result extends Component {
 
 function mapStateToProps({ authedUser, questions, users }, props) {
 	try {
-		const { id } = props.match.params
+		let id = ""
+		if (props.id) {
+			id = props.id
+		} else {
+			id = props.match.params.id
+		}
 		const question = questions[id]
 		const author = users[question.author]
 		const total_answers =
