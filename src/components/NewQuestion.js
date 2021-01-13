@@ -12,18 +12,15 @@ class NewQuestion extends Component {
 
 	handleChange = (e) => {
 		const value = e.target.value
-		this.setState((previousState) => ({
-			...previousState,
-			[e.target.name]: value,
-		}))
+		this.setState({ [e.target.name]: value })
 	}
 	handleSubmit = (e) => {
 		e.preventDefault()
 
 		const { optionOne, optionTwo } = this.state
-		const { dispatch, id } = this.props
+		const { id } = this.props
 
-		dispatch(handleAddQuestion(optionOne, optionTwo))
+		this.props.handleAddQuestion(optionOne, optionTwo)
 
 		this.setState(() => ({
 			optionOne: "",
@@ -85,4 +82,4 @@ class NewQuestion extends Component {
 	}
 }
 
-export default connect()(NewQuestion)
+export default connect(null, { handleAddQuestion })(NewQuestion)

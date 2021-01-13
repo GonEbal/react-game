@@ -2,6 +2,7 @@ import React, { Component } from "react"
 import logo from "../loginicon.png"
 import { connect } from "react-redux"
 import { handleSetAuthedUser } from "../actions/authedUser"
+import { Redirect } from 'react-router-dom'
 
 class Login extends Component {
 	state = {
@@ -17,16 +18,19 @@ class Login extends Component {
 	handleSubmit = (formSubmitEvent) => {
 		formSubmitEvent.preventDefault()
 		const { selectedUser } = this.state
-		const { authedUser, dispatch } = this.props
+		const { dispatch } = this.props
 
 		dispatch(handleSetAuthedUser(selectedUser))
 		this.setState(() => ({
-			toMain: authedUser ? true : false,
+			toMain: true,
 		}))
 	}
 	render() {
+		const { selectedUser, toMain } = this.state
+		if (toMain === true) {
+	      return <Redirect to='/' />
+	    }
 		const { users } = this.props
-		const { selectedUser } = this.state
 		return (
 			<div className="container_body">
 				<div className="login-greeting">
