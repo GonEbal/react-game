@@ -7,19 +7,21 @@ class Dashboard extends Component {
     show_answered: false,
   }
 
+  constructor(props) {
+    super(props);
+    this.box1 = React.createRef();
+    this.box2 = React.createRef();
+  }
+
   unanswered = () => {
-    const box2 = document.getElementById("box2")
-    const box1 = document.getElementById("box1")
-    box1.classList.remove("shadow")
-    box2.classList.add("shadow")
+    this.box1.current.classList.remove("shadow")
+    this.box2.current.classList.add("shadow")
     const action = { show_answered: false }
     this.change(action)
   }
   answered = () => {
-    const box1 = document.getElementById("box1")
-    const box2 = document.getElementById("box2")
-    box1.classList.add("shadow")
-    box2.classList.remove("shadow")
+    this.box1.current.classList.add("shadow")
+    this.box2.current.classList.remove("shadow")
     const action = { show_answered: true }
     this.change(action)
   }
@@ -33,10 +35,10 @@ class Dashboard extends Component {
     return (
       <div className="container_body">
         <div className="button_container">
-          <button id="box2" className="box shadow" onClick={this.unanswered}>
+          <button ref={this.box2} className="box shadow" onClick={this.unanswered}>
             Unanswered Questions
           </button>
-          <button id="box1" className="box" onClick={this.answered}>
+          <button ref={this.box1} className="box" onClick={this.answered}>
             Answered Questions
           </button>
         </div>
