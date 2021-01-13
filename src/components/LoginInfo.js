@@ -1,11 +1,13 @@
 import React, { Component } from "react"
 import { connect } from "react-redux"
 import { handleRemoveAuthedUser } from "../actions/authedUser"
+import { fakeAuth } from "./Login"
 
 class LoginInfo extends Component {
   logOut = () => {
     const { dispatch } = this.props
     dispatch(handleRemoveAuthedUser())
+    fakeAuth.signout()
   }
   render() {
     const { username } = this.props
