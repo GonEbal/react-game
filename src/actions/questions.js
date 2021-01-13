@@ -21,13 +21,6 @@ function addQuestion(question) {
   }
 }
 
-function addQuestionUser(question) {
-  return {
-    type: ADD_QUESTION_USER,
-    question,
-  }
-}
-
 export function handleAddQuestion(optionOneText, optionTwoText) {
   return (dispatch, getState) => {
     const { authedUser } = getState()
@@ -39,7 +32,6 @@ export function handleAddQuestion(optionOneText, optionTwoText) {
       author: authedUser,
     })
       .then((question) => dispatch(addQuestion(question)))
-      .then((question) => dispatch(addQuestionUser({question, authedUser})))
       .then(() => dispatch(hideLoading()))
   }
 }
@@ -53,19 +45,9 @@ function questionAswer({ authedUser, qid, answer }) {
   }
 }
 
-function questionAswerUser({ authedUser, qid, answer }) {
-  return {
-    type: ADD_QUESTION_ANSWER_USER,
-    authedUser,
-    qid,
-    answer,
-  }
-}
-
 export function handleAddQuestionAswer(info) {
   return (dispatch) => {
     dispatch(questionAswer(info))
-    dispatch(questionAswerUser(info))
 
     return saveQuestionAnswer(info).catch((e) => {
       console.warn("Error in handleAddQuestionAswer: ", e)
