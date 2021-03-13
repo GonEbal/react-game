@@ -2,7 +2,7 @@ let users = {
   andrey_doronichev: {
     id: 'andrey_doronichev',
     name: 'Andrey Doronichev',
-    avatarURL: 'https://media-exp1.licdn.com/dms/image/C5603AQGlDGAzskK7Uw/profile-displayphoto-shrink_400_400/0/1516240771303?e=1614211200&v=beta&t=hFNnkSApiG5OnYR-10-XuRczU1Njby8npf1Z69abD3Y',
+    avatarURL: 'https://media-exp1.licdn.com/dms/image/C5603AQGlDGAzskK7Uw/profile-displayphoto-shrink_400_400/0/1516240771303?e=1620864000&v=beta&t=JDxe_lY7ur59Mw1qQbYH01lhx1m3EW1_ZMF_RpdyWas',
     answers: {
       "8xf0y6ziyjabvozdd253nd": 'optionOne',
       "6ni6ok3ym7mf1p33lnez": 'optionTwo',
@@ -14,7 +14,7 @@ let users = {
   denissamokhin: {
     id: 'denissamokhin',
     name: 'Denis Samokhin',
-    avatarURL: 'https://media-exp1.licdn.com/dms/image/C5603AQElvbhs1jcJzQ/profile-displayphoto-shrink_400_400/0/1606765473679?e=1614211200&v=beta&t=ErZdsU_7e4M3607QTcjgq50xrUjJ7ejqavZLQ9qbyS0',
+    avatarURL: 'https://media-exp1.licdn.com/dms/image/C5603AQElvbhs1jcJzQ/profile-displayphoto-shrink_400_400/0/1606765473679?e=1620864000&v=beta&t=DK-z2hqz9hFoWA7gI-nTHofNov9khIvtwAY7Fe3FbGg',
     answers: {
       "vthrdm985a262al8qx3do": 'optionOne',
       "xj352vofupe1dqz9emx13r": 'optionTwo',
@@ -24,7 +24,7 @@ let users = {
   johndoe: {
     id: 'johndoe',
     name: 'John Doe',
-    avatarURL: 'https://media-exp1.licdn.com/dms/image/C5103AQFOeA-w4oPZ7A/profile-displayphoto-shrink_400_400/0/1517399907625?e=1614211200&v=beta&t=Pbh5tyR7_XcLeoN070ni62CWDmFFmOiXBE90lHq4vCY',
+    avatarURL: 'https://cdn1-www.superherohype.com/assets/uploads/2013/11/batmane3-1.jpg',
     answers: {
       "xj352vofupe1dqz9emx13r": 'optionOne',
       "vthrdm985a262al8qx3do": 'optionTwo',
