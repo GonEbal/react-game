@@ -7,8 +7,8 @@
 ## Project Setup
 
 * clone the Project - `https://github.com/GonEbal/react-game.git`
-* install the dependencies - `npm install`
-* launch the application - `npm start`
+* install the dependencies - `npm install` or `yarn`
+* launch the application - `npm start` or `yarn run`
 * The project can be viewed in the browser at - http://localhost:3000
 
 The `_DATA.js` file represents a fake database and methods that let you access the data. Some methods are represents in `api.js` file.
