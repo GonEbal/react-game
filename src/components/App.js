@@ -18,7 +18,7 @@ const PrivateRoute = ({ component: Component, ...rest }) => (
     fakeAuth.isAuthenticated === true
       ? <Component {...props} />
       : <Redirect to={{
-          pathname: '/login',
+          pathname: '/react-game/login',
           state: { from: props.location }
         }} />
   )} />
@@ -39,12 +39,12 @@ class App extends Component {
 						</div>
 						<div>
 							<Switch>
-								<PrivateRoute exact path="/" component={Dashboard} />
-								<PrivateRoute exact path="/add" component={NewQuestion} />
-								<PrivateRoute exact path="/leaderboard" component={LeaderBoard} />
-								<PrivateRoute exact path="/questions/:id" component={QuestionPage} />
-								<PrivateRoute exact path="/result/:id" component={Result} />
-								<Route exact path="/login" component={Login} />
+								<PrivateRoute exact path="/react-game" component={Dashboard} />
+								<PrivateRoute exact path="/react-game/add" component={NewQuestion} />
+								<PrivateRoute exact path="/react-game/leaderboard" component={LeaderBoard} />
+								<PrivateRoute exact path="/react-game/questions/:id" component={QuestionPage} />
+								<PrivateRoute exact path="/react-game/result/:id" component={Result} />
+								<Route exact path="/react-game/login" component={Login} />
 								<Route component={NotFound} />
 							</Switch>
 						</div>

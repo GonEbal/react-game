@@ -8,17 +8,17 @@ const Nav = ({ isAuthedUser }) => (
     <nav className="nav">
       <ul>
         <li>
-          <NavLink to="/" exact activeClassName="active">
+          <NavLink to="/react-game" exact activeClassName="active">
             Home
           </NavLink>
         </li>
         <li>
-          <NavLink to="/add" activeClassName="active">
+          <NavLink to="/react-game/add" activeClassName="active">
             New Question
           </NavLink>
         </li>
         <li>
-          <NavLink to="/leaderboard" activeClassName="active">
+          <NavLink to="/react-game/leaderboard" activeClassName="active">
             Leader Board
           </NavLink>
         </li>
