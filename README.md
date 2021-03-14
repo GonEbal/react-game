@@ -1,6 +1,6 @@
 # Would You Rather Project
 
-[Would You Rather](https://github.com/GonEbal/react-game.git) is a react-redux web app that poses a dilemma in the form of a question beginning with "Would You Rather".
+[Would You Rather](https://github.com/GonEbal/react-game) is a react-redux web app that poses a dilemma in the form of a question beginning with "Would You Rather".
 
 ![gif #1](public/preview.gif)
 
