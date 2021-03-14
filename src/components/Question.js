@@ -22,13 +22,13 @@ class Question extends Component {
 							<span>Would you rather</span>
 							<p>...{answer}...</p>
 							{answered === false ? (
-								<Link to={{pathname: `/react-game/questions/${this.props.id}`, state: {answered: false}}}>
+								<Link to={{pathname: `/questions/${this.props.id}`, state: {answered: false}}}>
 									<button className="view_poll_btn">
 										View Poll
 									</button>
 								</Link>
 							) : (
-								<Link to={{pathname: `/react-game/questions/${this.props.id}`, state: {answered: true}}}>
+								<Link to={{pathname: `/questions/${this.props.id}`, state: {answered: true}}}>
 									<button className="view_poll_btn">
 										View Poll
 									</button>

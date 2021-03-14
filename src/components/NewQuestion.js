@@ -31,7 +31,7 @@ class NewQuestion extends Component {
 	render() {
 		const { optionOne, optionTwo, toHome } = this.state
 		if (toHome === true) {
-	      return <Redirect to='/react-game/' />
+	      return <Redirect to='/' />
 	    }
 		return (
 			<div className="container_body">

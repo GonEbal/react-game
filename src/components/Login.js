@@ -38,7 +38,7 @@ class Login extends Component {
 	}
 	render() {
 		const { from } = this.props.location.state || {
-			from: { pathname: "/react-game" },
+			from: { pathname: "/" },
 		}
 		const { selectedUser, toMain } = this.state
 		if (toMain === true) {
@@ -46,11 +46,11 @@ class Login extends Component {
 		}
 		const { users } = this.props
 		let path = ""
-		if (from.pathname === "/react-game") {
+		if (from.pathname === "/") {
 			path = "Home Page"
-		} else if (from.pathname === "/react-game/add") {
+		} else if (from.pathname === "/add") {
 			path = "New Question Page"
-		} else if (from.pathname === "/react-game/leaderboard") {
+		} else if (from.pathname === "/leaderboard") {
 			path = "Leader Board Page"
 		}
 		return (

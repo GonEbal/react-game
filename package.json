@@ -1,7 +1,6 @@
 {
   "name": "react-game",
   "version": "0.1.0",
-  "homepage": "https://peaceful-curran-f82040.netlify.app/react-game",
   "private": true,
   "dependencies": {
     "@reduxjs/toolkit": "^1.5.0",

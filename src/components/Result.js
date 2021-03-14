@@ -5,7 +5,7 @@ import { Redirect } from "react-router-dom"
 class Result extends Component {
 	render() {
 		if (this.props.error) {
-			return <Redirect to={"/react-game/notfound"} />
+			return <Redirect to={"/notfound"} />
 		}
 		const { avatarURL, name } = this.props.author
 		const {

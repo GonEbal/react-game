@@ -32,7 +32,7 @@ class QuestionPage extends Component {
 	}
 	render() {
 		if (this.props.error) {
-			return <Redirect to={'/react-game/notfound'} />
+			return <Redirect to={'/notfound'} />
 		}
 		if (this.props.location.state.answered === true) {
 			return(
@@ -43,7 +43,7 @@ class QuestionPage extends Component {
 		const { avatarURL, name } = this.props.author
 		const { toResult } = this.state
 		if (toResult === true) {
-			return <Redirect to={`/react-game/result/${this.props.id}`} />
+			return <Redirect to={`/result/${this.props.id}`} />
 		}
 		return (
 			<div className="container_body">
